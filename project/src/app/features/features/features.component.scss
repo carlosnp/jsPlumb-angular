@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+}
+.project-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: transparent;
+  overflow-y: hidden;
+  app-toolbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+  }
+  main {
+    padding: var(--height_margin_vertical) 5rem;
+  }
+}
