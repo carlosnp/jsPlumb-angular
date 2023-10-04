@@ -1,0 +1,9 @@
+<div mat-dialog-content>
+  <ng-content></ng-content>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button color="primary"
+  (click)="closeDialog.emit(false)" [disabled]="loading">Cancelar</button>
+  <button mat-button color="primary"
+  (click)="closeDialog.emit(true)" [disabled]="loading">Confirmar</button>
+</div>

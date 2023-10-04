@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<ng-container [ngSwitch]="type">
+
+  <ng-container *ngSwitchCase="types.ALERT">
+    <app-dialog-alert
+    [loading]="loading"
+    (closeDialog)="close($event)">
+      <ng-container [ngTemplateOutlet]="content"></ng-container>
+    </app-dialog-alert>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="types.SIMPLE">
+    <app-dialog-simple>
+      <ng-container [ngTemplateOutlet]="content"></ng-container>
+    </app-dialog-simple>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="types.CONFIRMATION">
+    <app-dialog-confirm>
+      <mat-dialog-content class="mat-typography">
+        <ng-content select="[ios-dialog-content]"></ng-content>
+      </mat-dialog-content>
+      <div mat-dialog-actions align="end">
+        <ng-content select="[ios-dialog-custom-buttons]"></ng-content>
+      </div>
+    </app-dialog-confirm>
+  </ng-container>
+
+</ng-container>
+
+<!-- ng-content -->
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>
