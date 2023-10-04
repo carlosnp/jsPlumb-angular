@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { CanvasComponent } from './pages/canvas/canvas.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: CanvasComponent
   },
-  // {
-  //   path: '**',
-  //   redirectTo: '/'
-  // }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule { }
+export class JsplumbRoutingModule { }
