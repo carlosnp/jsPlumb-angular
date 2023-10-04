@@ -2,3 +2,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --body-color: rgba(0,0,0,0.6);
+  --dark-body-color: rgba(0,0,0,0.8);
+  // Margin vertical
+  --height-toolbar: 3rem;
+  // Altura del footer
+  --height-footer: 56px;
+}
