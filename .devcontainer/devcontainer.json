@@ -22,7 +22,7 @@
 				"quicktype.quicktype",
 				"christian-kohler.path-intellisense",
 				"ms-vscode-remote.remote-containers",
-				"amag2511.smart-index"
+				"GuilhermeTheodoro.typescript-indexing"
 			]
 		}
 	}
