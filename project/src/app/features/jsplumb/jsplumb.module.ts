@@ -9,11 +9,15 @@ import { DialogsModule } from 'src/app/core';
 /** Componentes */
 import { CanvasComponent } from './pages/canvas/canvas.component';
 import { JsplumbModalComponent } from './components/jsplumb-modal/jsplumb-modal.component';
+import { NodeComponent } from './components/node/node.component';
+import { NodeContainerComponent } from './components/node-container/node-container.component';
 
 @NgModule({
   declarations: [
     CanvasComponent,
-    JsplumbModalComponent
+    JsplumbModalComponent,
+    NodeComponent,
+    NodeContainerComponent
   ],
   imports: [
     CommonModule,
