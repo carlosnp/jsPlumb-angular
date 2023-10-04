@@ -4,5 +4,20 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"typescript.preferences.quoteStyle": "single",
+		"javascript.preferences.quoteStyle": "single",
+		"editor.tabSize": 4,
+		"editor.insertSpaces": true,
+		"editor.detectIndentation": false,
+		"[typescript]": {
+			"editor.tabSize": 2,
+		},
+		"[javascript]": {
+			"editor.tabSize": 2,
+		},
+		"[json]": {
+			"editor.tabSize": 2,
+		},
+	}
 }
