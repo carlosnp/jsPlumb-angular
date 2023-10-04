@@ -1,1 +1,2 @@
-# Proyecto para implementar la libreria jsplumb
+# jsPlumb-angular
+Integrar angular con jsPlumb
