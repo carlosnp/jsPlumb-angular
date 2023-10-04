@@ -1,3 +1,5 @@
 <p>canvas works!</p>
 <h1>hola</h1>
 <button mat-button color="primary" (click)="openDialog('1','Box')">Dialogo</button>
+<button (click)="nodeContainer.addNode()">Create new node</button>
+<app-nodes-container #nodeContainer [nodes]="nodes" [connections]="connections"></app-nodes-container>

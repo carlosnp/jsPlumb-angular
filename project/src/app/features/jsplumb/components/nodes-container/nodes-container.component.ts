@@ -7,15 +7,15 @@ import {
 } from '@angular/core';
 
 import {
-  JsplumbService
-} from '../../jsplumb.service';
+  JsplumbNodeService
+} from '../../jsplumb-node.service';
 
 @Component({
-  selector: 'app-node-container',
-  templateUrl: './node-container.component.html',
-  styleUrls: ['./node-container.component.scss']
+  selector: 'app-nodes-container',
+  templateUrl: './nodes-container.component.html',
+  styleUrls: ['./nodes-container.component.scss']
 })
-export class NodeContainerComponent implements OnInit {
+export class NodesContainerComponent implements OnInit {
   /**
    * Nodos
    */
@@ -34,7 +34,7 @@ export class NodeContainerComponent implements OnInit {
    * Constructor
    * @param nodeService
    */
-  constructor(private nodeService: JsplumbService) {}
+  constructor(private nodeService: JsplumbNodeService) {}
   /**
    * OnInit
    */

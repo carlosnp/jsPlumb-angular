@@ -10,20 +10,26 @@ import { DialogsModule } from 'src/app/core';
 import { CanvasComponent } from './pages/canvas/canvas.component';
 import { JsplumbModalComponent } from './components/jsplumb-modal/jsplumb-modal.component';
 import { NodeComponent } from './components/node/node.component';
-import { NodeContainerComponent } from './components/node-container/node-container.component';
+import { NodesContainerComponent } from './components/nodes-container/nodes-container.component';
+/** Servicios */
+import { JsplumbNodeService } from './jsplumb-node.service';
+
 
 @NgModule({
   declarations: [
     CanvasComponent,
     JsplumbModalComponent,
     NodeComponent,
-    NodeContainerComponent
+    NodesContainerComponent
   ],
   imports: [
     CommonModule,
     JsplumbRoutingModule,
     DialogsModule,
     MatButtonModule
+  ],
+  providers: [
+    JsplumbNodeService
   ]
 })
 export class JsplumbModule { }

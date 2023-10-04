@@ -17,7 +17,7 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class JsplumbService {
+export class JsplumbNodeService {
   /**
    *
    */
@@ -44,7 +44,10 @@ export class JsplumbService {
    */
   public addDynamicNode(node: NodeModel) {
     const factory = this.factoryResolver.resolveComponentFactory(NodeComponent);
+    console.log('\nFactory',factory);
+    console.log('\nrootViewContaine', this.rootViewContainer)
     const component = factory.create(this.rootViewContainer.parentInjector);
+    console.log('\nComponent',component);
     (<any>component.instance).node = node;
     (<any>component.instance).jsPlumbInstance = this.jsPlumbInstance;
     this.rootViewContainer.insert(component.hostView);
