@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 /** Material */
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 /** Servicio */
 import { DialogsService } from './dialogs.service';
 /** Componentes */
@@ -20,6 +21,7 @@ import { DialogConfirmComponent } from './components/dialog-confirm/dialog-confi
   imports: [
     CommonModule,
     MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     DialogsService

@@ -1,0 +1,9 @@
+<app-dialog
+  [title]="'Editar bloque ' + data.name + '?'"
+  [type]="type"
+  (closeDialog)="close($event)"
+>
+  <p>Se eliminará "{{ data.name }}" permanentemente.</p>
+  <p>Esta acción no puede ser reversada.</p>
+</app-dialog>
+
