@@ -3,11 +3,26 @@
 {
 	"name": "jsPlumb - angular",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	// "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+    "build": {
+		"dockerfile": "Dockerfile"
+	},
+    "features": {},
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"dbaeumer.vscode-eslint",
+				"Angular.ng-template",
+				"cyrilletuzi.angular-schematics",
+				"esbenp.prettier-vscode",
+				"formulahendry.auto-rename-tag",
+				"formulahendry.auto-close-tag",
+				"EditorConfig.EditorConfig",
+				"quicktype.quicktype",
+				"christian-kohler.path-intellisense",
+				"ms-vscode-remote.remote-containers",
+				"amag2511.smart-index"
 			]
 		}
 	}
