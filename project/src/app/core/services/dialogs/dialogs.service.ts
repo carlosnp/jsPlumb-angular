@@ -7,7 +7,8 @@ import {
 } from '@angular/core';
 
 import {
-  MatDialog
+  MatDialog,
+  MatDialogConfig
 } from '@angular/material/dialog';
 
 import {
@@ -17,6 +18,12 @@ import {
 import {
   DialogWidth
 } from './enums';
+
+/** Configuracion por defecto */
+const DEFAULT_STYLE: MatDialogConfig ={
+  width: '100%',
+  maxWidth: DialogWidth.SMALL
+}
 
 @Injectable({
   providedIn: 'root'
@@ -31,14 +38,13 @@ export class DialogsService {
   ) { }
   /**
    * Abrir un diálogo. Puedes generar un componente
-   * de diálogo con el comando `npm run create-dialog`
    * @param component componente para el diálogo
    * @param data data para el diálogo
-   * @param width tamaño del dialogo
+   * @param style Configuracion del dialogo
    */
-  open(component: ComponentType<unknown>, data: {[key: string]: any} = {}, width: DialogWidth | number = DialogWidth.SMALL): Promise<unknown> {
+  open(component: ComponentType<unknown>, data: {[key: string]: any} = {}, style: MatDialogConfig = DEFAULT_STYLE): Promise<unknown> {
     // Referencia del componente
-    const ref = this.dialog.open(component, { width: '100%', maxWidth: width, data });
+    const ref = this.dialog.open(component, { ...style, data });
     // Retornar el resultado
     return firstValueFrom(ref.afterClosed());
   }

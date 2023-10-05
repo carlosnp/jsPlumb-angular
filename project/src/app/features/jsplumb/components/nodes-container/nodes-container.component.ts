@@ -1,6 +1,8 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   Input,
+  OnChanges,
   OnInit,
   ViewChild,
   ViewContainerRef
@@ -13,9 +15,10 @@ import {
 @Component({
   selector: 'app-nodes-container',
   templateUrl: './nodes-container.component.html',
-  styleUrls: ['./nodes-container.component.scss']
+  styleUrls: ['./nodes-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NodesContainerComponent implements OnInit {
+export class NodesContainerComponent implements OnInit, OnChanges {
   /**
    * Nodos
    */
@@ -35,22 +38,6 @@ export class NodesContainerComponent implements OnInit {
    * @param nodeService
    */
   constructor(private nodeService: JsplumbNodeService) {}
-  /**
-   * OnInit
-   */
-  ngOnInit() {
-    this.nodeService.setRootViewContainerRef(this.viewContainerRef);
-
-    this.nodes.forEach(node => {
-      this.nodeService.addDynamicNode(node);
-    });
-
-    setTimeout(() => {
-      this.connections.forEach(connection => {
-        this.nodeService.addConnection(connection);
-      });
-    })
-  }
   /**
    * Agregar nodo
    */
@@ -76,5 +63,32 @@ export class NodesContainerComponent implements OnInit {
         .map((conn) => ({ uuids: conn.getUuids() }));
     const json = JSON.stringify({ nodes, connections });
     console.log(json);
+  }
+  /**
+   * OnInit
+   */
+  ngOnInit() {
+    console.log('\nviewContainerRef', this.viewContainerRef);
+    this.nodeService.setRootViewContainerRef(this.viewContainerRef);
+
+    this.nodes.forEach(node => {
+      this.nodeService.addDynamicNode(node);
+    });
+
+    setTimeout(() => {
+      this.connections.forEach(connection => {
+        this.nodeService.addConnection(connection);
+      });
+    })
+  }
+  /**
+   *
+   */
+  ngOnChanges(){
+    this.nodeService.setRootViewContainerRef(this.viewContainerRef);
+    console.log('NodesContainerComponent call >>  nodeService.addDynamicNode')
+    if (this.nodes.length > 0) {
+        this.nodeService.addDynamicNode(this.nodes[this.nodes.length-1]);
+    }
   }
 }

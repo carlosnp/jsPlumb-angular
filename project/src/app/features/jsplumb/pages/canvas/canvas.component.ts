@@ -53,7 +53,7 @@ export class CanvasComponent implements OnDestroy{
    * @param name entity name
    */
   openDialog(id: string, name: string) {
-    const ref$ = this.dialog.open(JsplumbModalComponent, { id, name }, );
+    const ref$ = this.dialog.open(JsplumbModalComponent, { id, name }, { maxWidth: 650 });
     ref$.then( result => console.log('Dialog', result));
   }
   fillFromJson() {
