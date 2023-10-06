@@ -9,8 +9,6 @@ import { DialogsModule } from 'src/app/core';
 /** Componentes */
 import { CanvasComponent } from './pages/canvas/canvas.component';
 import { JsplumbModalComponent } from './components/jsplumb-modal/jsplumb-modal.component';
-import { NodeComponent } from './components/node/node.component';
-import { NodesContainerComponent } from './components/nodes-container/nodes-container.component';
 /** Servicios */
 import { JsplumbNodeService } from './jsplumb-node.service';
 
@@ -19,8 +17,6 @@ import { JsplumbNodeService } from './jsplumb-node.service';
   declarations: [
     CanvasComponent,
     JsplumbModalComponent,
-    NodeComponent,
-    NodesContainerComponent
   ],
   imports: [
     CommonModule,
