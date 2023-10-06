@@ -1,7 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnDestroy
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  ViewContainerRef
 } from '@angular/core';
 
 import {
@@ -26,19 +29,16 @@ import {
   styleUrls: ['./canvas.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CanvasComponent implements OnDestroy{
+export class CanvasComponent implements OnDestroy, OnInit{
   /**
    * Stream para desuscribir
    */
   componentDestroyed$: Subject<void> = new Subject<void>();
   /**
-   * Nodos
+   *
    */
-  nodes = [];
-  /**
-   * Conexiones
-   */
-  connections = [];
+  @ViewChild('canvas')
+  canvas!: ViewContainerRef
   /**
    * Constructor
    * @param dialog
@@ -47,6 +47,12 @@ export class CanvasComponent implements OnDestroy{
     private dialog: DialogsService,
     private nodeService: JsplumbNodeService
   ) {}
+  ngOnInit(): void {
+    console.log('canvas', this.canvas);
+    if (this.canvas) {
+      this.nodeService.initInstanceJsplumb(this.canvas);
+    }
+  }
   /**
    * Delete entity
    * @param id entity id
