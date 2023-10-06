@@ -11,12 +11,16 @@ import { CanvasComponent } from './pages/canvas/canvas.component';
 import { JsplumbModalComponent } from './components/jsplumb-modal/jsplumb-modal.component';
 /** Servicios */
 import { JsplumbNodeService } from './jsplumb-node.service';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ToolboxComponent } from './components/toolbox/toolbox.component';
 
 
 @NgModule({
   declarations: [
     CanvasComponent,
     JsplumbModalComponent,
+    ToolbarComponent,
+    ToolboxComponent,
   ],
   imports: [
     CommonModule,
