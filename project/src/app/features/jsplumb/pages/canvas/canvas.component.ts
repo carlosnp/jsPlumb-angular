@@ -99,6 +99,12 @@ export class CanvasComponent implements OnDestroy, OnInit{
     console.log('save');
   }
   /**
+   * Agregar caja
+   */
+  addBox() {
+    console.log('addBox');
+  }
+  /**
    * Component on destroy
    */
   ngOnDestroy(): void {

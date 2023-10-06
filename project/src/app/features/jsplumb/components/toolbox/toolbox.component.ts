@@ -1,7 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnDestroy
+  EventEmitter,
+  OnDestroy,
+  Output
 } from '@angular/core';
 
 import {
@@ -19,6 +21,11 @@ export class ToolboxComponent implements OnDestroy{
    * Stream para desuscribir
    */
   componentDestroyed$: Subject<void> = new Subject<void>();
+  /**
+   * Guardar
+   */
+  @Output()
+  addBox: EventEmitter<void> = new EventEmitter<void>;
   /**
    * Component on destroy
    */

@@ -9,7 +9,7 @@
   (save)="save()"
 ></app-toolbar>
 <div class="canvas-area">
-  <app-toolbox></app-toolbox>
+  <app-toolbox (addBox)="addBox()"></app-toolbox>
   <div class="canvas" #canvas>
     <span>hola</span>
   </div>
