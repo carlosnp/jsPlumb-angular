@@ -63,6 +63,42 @@ export class CanvasComponent implements OnDestroy, OnInit{
     ref$.then( result => console.log('Dialog', result));
   }
   /**
+   *Acercar
+   */
+  zoomIn() {
+    console.log('Zoom in');
+  }
+  /**
+   * Alejar
+   */
+  zoomOut() {
+    console.log('Zoom out');
+  }
+  /**
+   * Copiar
+   */
+  copy() {
+    console.log('copy');
+  }
+  /**
+   * Editar
+   */
+  edit() {
+    console.log('edit');
+  }
+  /**
+   * Eliminar
+   */
+  remove() {
+    console.log('remove');
+  }
+  /**
+   * Guardar
+   */
+  save() {
+    console.log('save');
+  }
+  /**
    * Component on destroy
    */
   ngOnDestroy(): void {

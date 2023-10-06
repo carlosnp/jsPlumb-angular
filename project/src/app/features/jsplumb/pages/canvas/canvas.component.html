@@ -1,6 +1,16 @@
 <h1>jsplum</h1>
 <button mat-button color="primary" (click)="openDialog('1','Box')">Dialogo</button>
-<app-toolbar></app-toolbar>
-<app-toolbox></app-toolbox>
-<div class="canvas" #canvas>
+<app-toolbar
+  (zoomIn)="zoomIn()"
+  (zoomOut)="zoomOut()"
+  (copy)="copy()"
+  (edit)="edit()"
+  (remove)="remove()"
+  (save)="save()"
+></app-toolbar>
+<div class="canvas-area">
+  <app-toolbox></app-toolbox>
+  <div class="canvas" #canvas>
+    <span>hola</span>
+  </div>
 </div>

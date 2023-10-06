@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: column;
 }
-.canvas {
+.canvas-area {
   display: flex;
-  background: rgb(199, 199, 199);
-  width: 100%;
-  height: 70vh;
+  flex-direction: row;
+  .canvas {
+    display: flex;
+    background: rgb(199, 199, 199);
+    width: 100%;
+    height: 70vh;
+  }
 }

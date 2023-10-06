@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 /** Material */
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 /** Rutas */
 import { JsplumbRoutingModule } from './jsplumb-routing.module';
 /** Core */
@@ -26,7 +27,9 @@ import { ToolboxComponent } from './components/toolbox/toolbox.component';
     CommonModule,
     JsplumbRoutingModule,
     DialogsModule,
-    MatButtonModule
+    // Material
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     JsplumbNodeService
